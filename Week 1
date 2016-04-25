@@ -1,20 +1,27 @@
-Selected the Gapminder World dataset
+Dataset Selection: 
+I have chosen "nesarc_pds" dataset. I also wanted to work on gapminder dataset but I chose nesarc_pds as of now. 
 
-After looking through the codebook for the Gapminder dataset, I have decided that I am particularly interested in "Life Expectancy".
 
-I am interested in the association between these two variables: Life Expectancy and Income Per Person.
+Variable Selection: 
+After looking at the codebook of this dataset, I have selected these two variables as my interest to analyze.
+1) nicotine dependence
+2) smoking
 
-I am interested to analyze how life expentancy is related to income per person using Gapminder dataset.
 
-Added these two variables to my personal codebook: 
-lifeexpectancy: 2011 life expectancy at birth (years). The average number of years a newborn child would live if current mortality patterns were to stay the same.
-incomeperperson: 2010 Gross Domestic Product per capita in constant 2000 US$. The inflation but not the differences in the cost of living.
+Research Question: 
+Are smoking and nicotine dependence associated?
+
 
 Search Terms used on Google Scholar website were: 
-global life expectancy income level gapminder
+These are search terms - Young Adults Smoking Patterns Nicotine Usage Association 
+
 
 Reference: 
-http://www.gw-unterricht.at/pdf/gwu_126_076_087_lang.pdf
-http://www.gapminder.org/world/#$majorMode=chart$is;shi=t;ly=2003;lb=f;il=t;fs=11;al=30;stl=t;st=t;nsl=t;se=t$wst;tts=C$ts;sp=5.59290322580644;ti=2013$zpv;v=0$inc_x;mmid=XCOORDS;iid=phAwcNAVuyj1jiMAkmq1iMg;by=ind$inc_y;mmid=YCOORDS;iid=phAwcNAVuyj2tPLxKvvnNPA;by=ind$inc_s;uniValue=8.21;iid=phAwcNAVuyj0XOoBL_n5tAQ;by=ind$inc_c;uniValue=255;gid=CATID0;by=grp$map_x;scale=log;dataMin=194;dataMax=96846$map_y;scale=lin;dataMin=23;dataMax=86$map_s;sma=49;smi=2.65$cd;bd=0$inds=;example=75
+http://onlinelibrary.wiley.com/doi/10.1111/j.1530-0277.2008.00796.x/abstract;jsessionid=3D4ABB88F1DA3ED8E1EA131A1C822116.f03t03?userIsAuthenticated=false&deniedAccessCustomisedMessage=
+http://pubs.niaaa.nih.gov/publications/arh27-1/79-86.htm?__hstc=137865327.b7bf88e972fdd7a7debc8575bac5a80c.1448841600062.1448841600063.1448841600064.1&__hssc=137865327.1.1448841600065&__hsfp=3972014050
+http://circ.ahajournals.org/content/121/13/1518.short
+Coursera lectures from this course: Data Management and Visualization
 
-Hence, those are the two variables that I think supplement my research to continue with the next weeks' lectures.
+
+Developed Hypothesis: 
+Are smoking and nicotine dependence associated among young adults who have smoked in the past 1 year or 12 months? 
