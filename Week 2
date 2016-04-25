@@ -1,0 +1,224 @@
+Step 1 of 2: PROGRAM
+
+""" 
+This is a program that supplements my research question
+Research Question: 
+Are smoking and nicotine dependence associated among young adults who have smoked in the past 1 year?
+
+"""
+
+import pandas
+import numpy
+
+# Calling in the NESARC dataset using pandas and read_csv function
+
+my_data = pandas.read_csv('nesarc_pds.csv', low_memory = False)
+
+# Printing the length of rows and columns
+
+print ("Number of rows:", len(my_data))
+print("Number of columns:", len(my_data.columns))
+
+my_data["TAB12MDX"] = my_data["TAB12MDX"].convert_objects(convert_numeric=True)
+my_data["CHECK321"] = my_data["CHECK321"].convert_objects(convert_numeric=True)
+my_data["S3AQ3C1"] = my_data["S3AQ3C1"].convert_objects(convert_numeric=True)
+
+
+print("counts for TAB12MDX - nicotine dependence in the past 12 months, yes=1")
+c1 = my_data["TAB12MDX"].value_counts(sort=False, dropna=False)
+print (c1)
+
+print("percentages for TAB12MDX - nicotone dependence in the past 12 months, yes=1")
+p1 = my_data["TAB12MDX"].value_counts(sort=False, normalize = True)
+print (p1)
+
+print("counts for CHECK321 - smoked in the past 12 months, yes=1")
+c2 = my_data["CHECK321"].value_counts(sort=False, dropna=False)
+print (c2)
+
+print("percentages for CHECK321 - smoked in the past 12 months, yes=1")
+p2 = my_data["CHECK321"].value_counts(sort=False, normalize = True)
+print (p2)
+
+print("counts for S3AQ3C1 - usual frequency when smoked cigarettes")
+c3 = my_data["S3AQ3C1"].value_counts(sort=False, dropna=False)
+print (c3)
+
+print("percentages for S3AQ3C1 - usual frequency when smoked cigarettes")
+p3 = my_data["S3AQ3C1"].value_counts(sort=False, normalize = True)
+print (p3)
+
+# Age greater that or equal to 18 and less than or equal to 25 - to see who is smoking
+
+sub1 = my_data[(my_data["AGE"]>=18) & (my_data["AGE"]<=25) & (my_data["CHECK321"]==1)]
+
+# this line of code is to eliminate if any errors might occur
+
+sub2 = sub1.copy()
+
+print ("Counts for Age")
+c4 = sub2["AGE"].value_counts(sort=False)
+print(c4)
+
+print ("Percentages for Age")
+p4 = sub2["AGE"].value_counts(sort=False, normalize=True)
+print(p4)
+
+print ("Counts for CHECK321")
+c5 = sub2["CHECK321"].value_counts(sort=False)
+print(c5)
+
+print ("Percentages for CHECK321")
+p5 = sub2["CHECK321"].value_counts(sort=False, normalize=True)
+print(p5)
+
+--------------------------------------------------------------------------------------
+
+Step 2 of 2: OUTPUT
+
+Number of rows: 43093
+Number of columns: 3008
+
+counts for TAB12MDX - nicotine dependence in the past 12 months, yes=1
+0    38131
+1     4962
+Name: TAB12MDX, dtype: int64
+percentages for TAB12MDX - nicotone dependence in the past 12 months, yes=1
+0    0.884854
+1    0.115146
+Name: TAB12MDX, dtype: float64
+counts for CHECK321 - smoked in the past 12 months, yes=1
+NaN     25080
+ 1.0     9913
+ 2.0     8078
+ 9.0       22
+Name: CHECK321, dtype: int64
+percentages for CHECK321 - smoked in the past 12 months, yes=1
+1.0    0.230037
+2.0    0.187455
+9.0    0.000511
+Name: CHECK321, dtype: float64
+counts for S3AQ3C1 - usual frequency when smoked cigarettes
+NaN      25080
+ 1.0       934
+ 2.0       884
+ 3.0       923
+ 4.0       573
+ 5.0      1070
+ 6.0       463
+ 7.0       269
+ 8.0       299
+ 9.0        49
+ 10.0     3077
+ 11.0       23
+ 12.0      230
+ 13.0       34
+ 14.0       25
+ 15.0      851
+ 16.0       40
+ 17.0       22
+ 18.0       59
+ 19.0        5
+ 20.0     5366
+ 21.0        1
+ 22.0       10
+ 23.0        2
+ 24.0        7
+ 25.0      155
+ 27.0        2
+ 28.0        3
+ 29.0        3
+ 30.0      909
+ 33.0        1
+ 34.0        1
+ 35.0       30
+ 37.0        2
+ 39.0        1
+ 40.0      993
+ 45.0        8
+ 50.0      106
+ 55.0        2
+ 57.0        1
+ 60.0      241
+ 66.0        1
+ 70.0       12
+ 75.0        2
+ 80.0       47
+ 98.0       15
+ 99.0      262
+Name: S3AQ3C1, dtype: int64
+percentages for S3AQ3C1 - usual frequency when smoked cigarettes
+1.0     0.021674
+2.0     0.020514
+3.0     0.021419
+4.0     0.013297
+5.0     0.024830
+6.0     0.010744
+7.0     0.006242
+8.0     0.006938
+9.0     0.001137
+10.0    0.071404
+11.0    0.000534
+12.0    0.005337
+13.0    0.000789
+14.0    0.000580
+15.0    0.019748
+16.0    0.000928
+17.0    0.000511
+18.0    0.001369
+19.0    0.000116
+20.0    0.124521
+21.0    0.000023
+22.0    0.000232
+23.0    0.000046
+24.0    0.000162
+25.0    0.003597
+27.0    0.000046
+28.0    0.000070
+29.0    0.000070
+30.0    0.021094
+33.0    0.000023
+34.0    0.000023
+35.0    0.000696
+37.0    0.000046
+39.0    0.000023
+40.0    0.023043
+45.0    0.000186
+50.0    0.002460
+55.0    0.000046
+57.0    0.000023
+60.0    0.005593
+66.0    0.000023
+70.0    0.000278
+75.0    0.000046
+80.0    0.001091
+98.0    0.000348
+99.0    0.006080
+
+Counts for Age
+18    161
+19    200
+20    221
+21    239
+22    228
+23    231
+24    241
+25    185
+Name: AGE, dtype: int64
+Percentages for Age
+18    0.094373
+19    0.117233
+20    0.129543
+21    0.140094
+22    0.133646
+23    0.135404
+24    0.141266
+25    0.108441
+Name: AGE, dtype: float64
+Counts for CHECK321
+1.0    1706
+Name: CHECK321, dtype: int64
+Percentages for CHECK321
+1.0    1.0
+Name: CHECK321, dtype: float64
+---------------------------------------------------------------------------------------
