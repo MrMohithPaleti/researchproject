@@ -1,2 +1,2 @@
 # researchproject
-To work on Gapminder World dataset and codebook
+To work on datasets using codebooks and logic
